@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeChatbot();
     initializeModals();
     
-    console.log('EcoEdu Application Initialized');
+    console.log('ReEarth Application Initialized');
 });
 
 // Navigation Functions
@@ -645,7 +645,7 @@ function generateBotResponse(userMessage) {
         'recycle': 'Recycling is crucial for reducing waste! Remember the 3 R\'s: Reduce, Reuse, Recycle. Start by reducing consumption first.',
         'energy': 'Great question about energy! You can save energy by using LED bulbs, unplugging devices when not in use, and using natural light when possible.',
         'water': 'Water conservation is important! Take shorter showers, fix leaks promptly, and collect rainwater for plants.',
-        'default': 'That\'s an interesting question! I can help you with information about recycling, energy conservation, water saving, and your EcoEdu progress. What would you like to know more about?'
+        'default': 'That\'s an interesting question! I can help you with information about recycling, energy conservation, water saving, and your ReEarth progress. What would you like to know more about?'
     };
     
     const lowerMessage = userMessage.toLowerCase();
@@ -770,4 +770,4 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-console.log('EcoEdu Script Loaded Successfully');
+console.log('ReEarth Script Loaded Successfully');

@@ -1,4 +1,4 @@
-# Design Guidelines for EcoEdu - Gamified Environmental Education Platform
+# Design Guidelines for ReEarth - Gamified Environmental Education Platform
 
 ## Design Approach
 **System-Based Approach**: Material Design adapted for educational gaming
