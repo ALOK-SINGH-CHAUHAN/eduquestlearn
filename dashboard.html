@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - EcoEdu</title>
+    <meta name="description" content="Your EcoEdu dashboard - track your eco-points, complete missions, take quizzes, and see your environmental impact.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>EcoEdu</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle" data-testid="button-sidebar-toggle">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="sidebar-user">
+                <div class="user-avatar">
+                    <img src="https://via.placeholder.com/60x60/4ade80/ffffff?text=JS" alt="User Avatar" id="userAvatar">
+                </div>
+                <div class="user-info">
+                    <h4 id="userName" data-testid="text-user-name">Jane Smith</h4>
+                    <p id="userSchool" data-testid="text-user-school">Green Valley High School</p>
+                    <div class="user-level">
+                        <span class="level-badge" data-testid="text-user-level">Level 12</span>
+                        <span class="eco-points" data-testid="text-user-points">
+                            <i class="fas fa-leaf"></i>
+                            2,450 pts
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-item active" data-testid="nav-dashboard">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#quizzes" class="nav-item" data-testid="nav-quizzes">
+                    <i class="fas fa-brain"></i>
+                    <span>Quizzes</span>
+                </a>
+                <a href="#missions" class="nav-item" data-testid="nav-missions">
+                    <i class="fas fa-tasks"></i>
+                    <span>Missions</span>
+                </a>
+                <a href="#leaderboard" class="nav-item" data-testid="nav-leaderboard">
+                    <i class="fas fa-trophy"></i>
+                    <span>Leaderboard</span>
+                </a>
+                <a href="#progress" class="nav-item" data-testid="nav-progress">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Progress</span>
+                </a>
+                <a href="#chatbot" class="nav-item" data-testid="nav-chatbot">
+                    <i class="fas fa-robot"></i>
+                    <span>Eco Assistant</span>
+                </a>
+                <a href="#waste-sorting" class="nav-item" data-testid="nav-waste-sorting">
+                    <i class="fas fa-recycle"></i>
+                    <span>Waste Sorting</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#profile" class="nav-item" data-testid="nav-profile">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+                <a href="#settings" class="nav-item" data-testid="nav-settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+                <a href="index.html" class="nav-item logout" data-testid="nav-logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button class="menu-toggle" id="menuToggle" data-testid="button-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 id="pageTitle" data-testid="text-page-title">Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="header-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-fire"></i>
+                            <span>7 day streak</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-leaf"></i>
+                            <span id="headerPoints" data-testid="text-header-points">2,450 pts</span>
+                        </div>
+                    </div>
+                    <div class="notifications" data-testid="button-notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-menu">
+                        <img src="https://via.placeholder.com/40x40/4ade80/ffffff?text=JS" alt="User" class="user-avatar-small">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content" id="dashboardContent">
+                <!-- Overview Cards -->
+                <section class="overview-cards">
+                    <div class="card eco-points-card" data-testid="card-eco-points">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h3>Total Eco-Points</h3>
+                                <div class="points-display">
+                                    <span class="points-number">2,450</span>
+                                    <span class="points-change">+125 today</span>
+                                </div>
+                            </div>
+                            <div class="card-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card level-card" data-testid="card-level">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h3>Current Level</h3>
+                                <div class="level-display">
+                                    <span class="level-number">12</span>
+                                    <span class="level-name">Eco Warrior</span>
+                                </div>
+                                <div class="level-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 65%"></div>
+                                    </div>
+                                    <span class="progress-text">650/1000 XP</span>
+                                </div>
+                            </div>
+                            <div class="card-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card missions-card" data-testid="card-missions">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h3>Active Missions</h3>
+                                <div class="missions-display">
+                                    <span class="missions-count">3</span>
+                                    <span class="missions-text">in progress</span>
+                                </div>
+                            </div>
+                            <div class="card-icon">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card ranking-card" data-testid="card-ranking">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h3>School Ranking</h3>
+                                <div class="ranking-display">
+                                    <span class="ranking-number">#5</span>
+                                    <span class="ranking-text">in class</span>
+                                </div>
+                            </div>
+                            <div class="card-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quick Actions -->
+                <section class="quick-actions">
+                    <h2>Quick Actions</h2>
+                    <div class="action-grid">
+                        <button class="action-card" data-testid="button-take-quiz">
+                            <div class="action-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>Take Quiz</h3>
+                            <p>Test your knowledge</p>
+                        </button>
+                        <button class="action-card" data-testid="button-new-mission">
+                            <div class="action-icon">
+                                <i class="fas fa-plus-circle"></i>
+                            </div>
+                            <h3>New Mission</h3>
+                            <p>Start a new challenge</p>
+                        </button>
+                        <button class="action-card" data-testid="button-daily-challenge">
+                            <div class="action-icon">
+                                <i class="fas fa-calendar-day"></i>
+                            </div>
+                            <h3>Daily Challenge</h3>
+                            <p>Today's eco task</p>
+                        </button>
+                        <button class="action-card" data-testid="button-waste-sorting-game">
+                            <div class="action-icon">
+                                <i class="fas fa-recycle"></i>
+                            </div>
+                            <h3>Waste Sorting</h3>
+                            <p>AI-powered game</p>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Recent Activity -->
+                <section class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list">
+                        <div class="activity-item" data-testid="activity-quiz-completed">
+                            <div class="activity-icon quiz">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Completed "Climate Change Basics" Quiz</h4>
+                                <p>Scored 18/20 - Earned 75 eco-points</p>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                            <div class="activity-points">+75</div>
+                        </div>
+                        <div class="activity-item" data-testid="activity-mission-completed">
+                            <div class="activity-icon mission">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Mission Complete: Park Cleanup</h4>
+                                <p>Submitted photo proof - Under review</p>
+                                <span class="activity-time">1 day ago</span>
+                            </div>
+                            <div class="activity-status pending">Pending</div>
+                        </div>
+                        <div class="activity-item" data-testid="activity-badge-earned">
+                            <div class="activity-icon badge">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Badge Earned: "Recycling Champion"</h4>
+                                <p>Completed 10 waste sorting challenges</p>
+                                <span class="activity-time">2 days ago</span>
+                            </div>
+                            <div class="activity-badge">🏆</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Leaderboard Preview -->
+                <section class="leaderboard-preview">
+                    <div class="section-header">
+                        <h2>Class Leaderboard</h2>
+                        <button class="btn btn-outline btn-sm" data-testid="button-view-full-leaderboard">View All</button>
+                    </div>
+                    <div class="leaderboard-list">
+                        <div class="leaderboard-item top-1">
+                            <div class="rank">1</div>
+                            <div class="user-info">
+                                <img src="https://via.placeholder.com/40x40/4ade80/ffffff?text=AM" alt="Alex M">
+                                <div>
+                                    <h4>Alex Martinez</h4>
+                                    <p>Green Valley High</p>
+                                </div>
+                            </div>
+                            <div class="points">3,120 pts</div>
+                        </div>
+                        <div class="leaderboard-item top-2">
+                            <div class="rank">2</div>
+                            <div class="user-info">
+                                <img src="https://via.placeholder.com/40x40/4ade80/ffffff?text=SK" alt="Sarah K">
+                                <div>
+                                    <h4>Sarah Kim</h4>
+                                    <p>Green Valley High</p>
+                                </div>
+                            </div>
+                            <div class="points">2,890 pts</div>
+                        </div>
+                        <div class="leaderboard-item top-3">
+                            <div class="rank">3</div>
+                            <div class="user-info">
+                                <img src="https://via.placeholder.com/40x40/4ade80/ffffff?text=MJ" alt="Mike J">
+                                <div>
+                                    <h4>Mike Johnson</h4>
+                                    <p>Green Valley High</p>
+                                </div>
+                            </div>
+                            <div class="points">2,560 pts</div>
+                        </div>
+                        <div class="leaderboard-item current-user">
+                            <div class="rank">5</div>
+                            <div class="user-info">
+                                <img src="https://via.placeholder.com/40x40/4ade80/ffffff?text=JS" alt="Jane S">
+                                <div>
+                                    <h4>Jane Smith (You)</h4>
+                                    <p>Green Valley High</p>
+                                </div>
+                            </div>
+                            <div class="points">2,450 pts</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals and overlays will be added by JavaScript -->
+    <div id="modalOverlay" class="modal-overlay hidden"></div>
+    
+    <!-- Quiz Modal -->
+    <div id="quizModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Environmental Knowledge Quiz</h3>
+                <button class="modal-close" data-testid="button-close-quiz">&times;</button>
+            </div>
+            <div id="quizContent" class="modal-body">
+                <!-- Quiz content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Mission Modal -->
+    <div id="missionModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Available Missions</h3>
+                <button class="modal-close" data-testid="button-close-mission">&times;</button>
+            </div>
+            <div id="missionContent" class="modal-body">
+                <!-- Mission content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot -->
+    <div id="chatbot" class="chatbot hidden">
+        <div class="chatbot-header">
+            <h4><i class="fas fa-robot"></i> Eco Assistant</h4>
+            <button class="chatbot-toggle" id="chatbotClose" data-testid="button-close-chatbot">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="bot-message">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    Hello! I'm your Eco Assistant. How can I help you with your environmental journey today?
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInput" placeholder="Ask me about environmental tips..." data-testid="input-chatbot">
+            <button id="chatbotSend" data-testid="button-send-message">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <button class="chatbot-float" id="chatbotFloat" data-testid="button-open-chatbot">
+        <i class="fas fa-robot"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
